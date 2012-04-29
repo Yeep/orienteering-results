@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ResultStore.Model"
+                   namespace="ResultStore.Model.Application">
+  <class name="QueuedEvent"
+         abstract="true"
+         table="Application.EventQueue">
+    <id name="Id">
+      <generator class="hilo"/>
+    </id>
+    <property name="Submitted"/>
+    <property name="Status"/>
+    <property name="Processor"/>
+
+    <union-subclass table="Application.FileEventQueue"
+                    name="FileEvent">
+      <property name="Filename"/>
+    </union-subclass>
+
+    <union-subclass table="Application.WebEventQueue"
+                    name="WebEvent">
+      <property name="Url"/>
+    </union-subclass>
+  </class>
+</hibernate-mapping>

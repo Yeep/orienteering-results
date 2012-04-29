@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="jquery/x-jquery-tmpl" id="eventTemplate">
+    <div class="event-summary">
+        <h1><a href="/view/event/${Id}">${Name}</a></h1>
+    </div>
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        debugger;
+        $.getJSON(
+            "/store/events/recent/10",
+            null,
+            function (data) {
+                $('#eventTemplate').tmpl(data).appendTo("#eventContainer");
+            }
+        );
+    });
+</script>
+
+<div id="eventContainer" />

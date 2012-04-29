@@ -1,0 +1,114 @@
+﻿body {
+    background-color: #144f19;
+    font-family: Verdana, Sans-Serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+header, footer, nav, section {
+    display: block
+}
+
+.page {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+}
+
+header {
+    position: relative;
+    color: #FFFFFF;
+    height: 60px;
+}
+
+header #title, #main #content, header nav, header #logindisplay {
+    position: relative;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header #site-name {
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    font-size: 50px;
+}
+
+header #site-tagline {
+    position: absolute;
+    right: 10px;
+    top: 42px;
+    font-size: 13px;
+}
+
+header #logindisplay {
+    position: relative;
+    top: 5px;
+    font-size: 0.8em;
+    color: #FFFFFF;
+}
+
+header #logindisplay a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#main {
+    background-color: #FFFFFF;
+}
+
+#main table {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    height: 50px;
+}
+
+fieldset {
+    width: 100%;
+}
+
+nav #menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.result {
+    display: table-row;
+    font-family: Consolas;
+}
+
+.result-position {
+    display: table-cell;
+    width: 100px;
+    text-align: right;
+    border-right: 1px solid #000000;
+    padding-right: 5px;
+}
+
+.result-name {
+    display: table-cell;
+    width: 300px;
+    padding-left: 5px;
+}
+
+.result-age {
+    display: table-cell;
+    width: 75px;
+}
+
+.result-club {
+    display: table-cell;
+    width: 150px;
+}
+
+.result-time {
+    display: table-cell;
+    width: 100px;
+    text-align: right;
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ResultStore.Model"
+                   namespace="ResultStore.Model.Orienteering">
+  <class name="Event"
+         table="Orienteering.Events">
+    <id name="Id">
+      <generator class="hilo"/>
+    </id>
+    <property name="Name"/>
+    <property name="Date"/>
+    <property name="Description"/>
+    <property name="Url"/>
+    <many-to-one class="Club" name="Club" lazy="false"/>
+  </class>
+</hibernate-mapping>

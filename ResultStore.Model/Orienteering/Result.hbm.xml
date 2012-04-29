@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ResultStore.Model"
+                   namespace="ResultStore.Model.Orienteering">
+  <class name="Result"
+         table="Orienteering.Results">
+    <id name="Id">
+      <generator class="hilo"/>
+    </id>
+    <property name="Position"/>
+    <property name="Name"/>
+    <property name="Time"/>
+    <property name="Code"/>
+    <property name="ClubName"/>
+    <property name="Age"/>
+    <property name="Class"/>
+    <many-to-one class="Course" name="Course" lazy="false"/>
+    <many-to-one class="Person" name="Person" lazy="false"/>
+    <many-to-one class="Club" name="Club" lazy="false"/>
+  </class>
+</hibernate-mapping>

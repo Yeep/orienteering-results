@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Event";
+}
+
+<script type="jquery/x-jquery-tmpl" id="eventTemplate">
+    <div class="event">
+        <h1>${Name}</h1>
+        <table>
+            <tr>
+                <td>Date:</td>
+                <td>${Date}</td>
+            </tr>
+            <tr>
+                <td>Url:</td>
+                <td><a href="${Url}">${Url}</a></td>
+            </tr>
+            <tr>
+                <td>Club:</td>
+                <td><a href="/view/club/${Club.Id}">${Club.Name}</a></td>
+            </tr>
+            <tr>
+                <td colspan=2>${Description}</td>
+            </tr>
+        </table>
+    </div>
+</script>
+
+<script type="jquery/x-jquery-tmpl" id="courseTemplate">
+    <div class="course">
+        <h2>${Name}</h2>
+        <div id="course_${Id}_results"></div>
+    </div>
+</script>
+
+<script type="jquery/x-jquery-tmpl" id="resultTemplate">
+    <div class="result">
+        <span class="result-position">{{if Position}}${Position}{{/if}}{{if !Position}}${Code}{{/if}}</span>
+        <span class="result-name">${Name}</span>
+        <span class="result-age">${Age}</span>
+        <span class="result-club">${ClubName}</span>
+        <span class="result-time">{{if Time.Hours != 0}}${Time.Hours}:{{/if}}${pad(Time.Minutes, 2)}:${pad(Time.Seconds, 2)}</span>
+    </div>
+</script>
+
+<script language="javascript" type="text/javascript">
+    function pad(number, length) {
+        var str = '' + number;
+        while (str.length < length) {
+            str = '0' + str;
+        }
+        return str;
+    }
+
+    (function ($) {
+        if (!$.outerHTML) {
+            $.extend({
+                outerHTML: function (ele) {
+                    var $return = undefined;
+                    if (ele.length === 1) {
+                        $return = ele[0].outerHTML;
+                    }
+                    else if (ele.length > 1) {
+                        $return = {};
+                        ele.each(function (i) {
+                            $return[i] = $(this)[0].outerHTML;
+                        })
+                    };
+                    return $return;
+                }
+            });
+            $.fn.extend({
+                outerHTML: function () {
+                    return $.outerHTML($(this));
+                }
+            });
+        }
+    })(jQuery);
+
+    $(document).ready(function () {
+        tabs = $("#tabs").tabs({
+            ajaxOptions: {
+                dataType: 'json',
+                dataFilter: function (result) {
+                    var data = $.parseJSON(result);
+                    var string = '';
+                    for (thing in data) {
+                        string = string + $("#resultTemplate").tmpl(data[thing]).outerHTML();
+                    }
+                    this.dataTypes = ['html']
+                    return string;
+                }
+            }
+        });
+
+        $.getJSON(
+            "/store/event/@ViewBag.EventIndex",
+            null,
+            function (event) {
+                $('#eventTemplate').tmpl(event).appendTo("#eventContainer");
+            }
+        );
+
+        $.getJSON(
+            "/store/event/@ViewBag.EventIndex/courses/",
+            null,
+            function (data) {
+                for (course in data) {
+                    $("#tabs").tabs('add', '/store/event/@ViewBag.EventIndex/course/' + data[course].Id + '/results', data[course].Name);
+                }
+            }
+        );
+    });
+</script>
+
+<div id="eventContainer"></div>
+
+<div id="tabs">
+    <ul>
+    </ul>
+</div>
+
+<div id="courseContainer"></div>

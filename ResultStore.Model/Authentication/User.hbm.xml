@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ResultStore.Model"
+                   namespace="ResultStore.Model.Authentication">
+  <class name="User"
+         table="Authentication.Users">
+    <id name="Id">
+      <generator class="hilo"/>
+    </id>
+    <property name="Name"/>
+    <property name="Password"/>
+    <set name="Roles"
+         table="Authentication.UserRoles"
+         cascade="all">
+      <key column="UserId"/>
+      <many-to-many column="RoleName"
+                    class="Role"/>
+    </set>
+    <set name="Rights"
+         table="Authentication.UserRights"
+         cascade="all">
+      <key column="UserId"/>
+      <many-to-many column="RightName"
+                    class="Right"/>
+    </set>
+  </class>
+</hibernate-mapping>
