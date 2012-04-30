@@ -6,6 +6,7 @@
         public virtual string Name { get; set; }
         public virtual string ShortName { get; set; }
         public virtual string Url { get; set; }
+        public virtual string AssociationName { get; set; }
         public virtual Association Association { get; set; }
     }
 }

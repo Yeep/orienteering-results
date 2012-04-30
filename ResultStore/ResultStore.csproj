@@ -92,8 +92,10 @@
     <Compile Include="AdaptiveResult.cs" />
     <Compile Include="App_Start\AttributeRouting.cs" />
     <Compile Include="Controllers\ClubController.cs" />
+    <Compile Include="Controllers\ContextAwareController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="DebugData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -169,6 +171,8 @@
           <DevelopmentServerPort>8080</DevelopmentServerPort>
           <DevelopmentServerVPath>/store/</DevelopmentServerVPath>
           <IISUrl>http://localhost:8080/store</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://yeep:8080/store</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -2,25 +2,42 @@
 using HtmlAgilityPack;
 using ResultStore.Model.Orienteering;
 using ResultStore.Repository;
+using ResultStore.Model.Application;
 
 namespace ResultStore.Processing.Import
 {
     public abstract class WebImporter : IImporter
     {
         private HtmlWeb m_web = new HtmlWeb();
-
-        protected string WebAddress { get; set; }
+        private WebEvent m_event;
 
         //---------------------------------------------------------------------------------------------------
 
         public abstract string Name { get; }
         public abstract string Description { get; }
 
+        public QueuedEvent Event {
+            get { return m_event; }
+            set {
+                if (value is WebEvent) {
+                    m_event = (WebEvent)value;
+                } else {
+                    throw new Exception("Event must be of type WebEvent");
+                }
+            }
+        }
+
+        //---------------------------------------------------------------------------------------------------
+
+        protected WebEvent InternalEvent {
+            get { return m_event; }
+        }
+
         //---------------------------------------------------------------------------------------------------
 
         public abstract decimal Probability();
         public abstract Event Sample();
-        public abstract void Import(IImportRepository repository);
+        public abstract Event Import(IImportRepository repository);
 
         //---------------------------------------------------------------------------------------------------
 

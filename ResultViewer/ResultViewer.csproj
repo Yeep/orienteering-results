@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="App_Start\AttributeRouting.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClubController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -95,10 +96,211 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\themes\base\images\flags.png" />
-    <Content Include="Content\themes\base\images\splash.png" />
+    <Content Include="Content\images\flags.png" />
+    <Content Include="Content\images\hand_drawn\add.png" />
+    <Content Include="Content\images\hand_drawn\alert.png" />
+    <Content Include="Content\images\hand_drawn\basket-empty.png" />
+    <Content Include="Content\images\hand_drawn\basket-full.png" />
+    <Content Include="Content\images\hand_drawn\bin-empty.png" />
+    <Content Include="Content\images\hand_drawn\bin-full.png" />
+    <Content Include="Content\images\hand_drawn\calendar.png" />
+    <Content Include="Content\images\hand_drawn\clasp.png" />
+    <Content Include="Content\images\hand_drawn\clock.png" />
+    <Content Include="Content\images\hand_drawn\comment.png" />
+    <Content Include="Content\images\hand_drawn\computer.png" />
+    <Content Include="Content\images\hand_drawn\configuration.png" />
+    <Content Include="Content\images\hand_drawn\datebase.png" />
+    <Content Include="Content\images\hand_drawn\disc-cd.png" />
+    <Content Include="Content\images\hand_drawn\disc-floopy.png" />
+    <Content Include="Content\images\hand_drawn\download.png" />
+    <Content Include="Content\images\hand_drawn\earth.png" />
+    <Content Include="Content\images\hand_drawn\error.png" />
+    <Content Include="Content\images\hand_drawn\favourites.png" />
+    <Content Include="Content\images\hand_drawn\file.png" />
+    <Content Include="Content\images\hand_drawn\graffika.org.png" />
+    <Content Include="Content\images\hand_drawn\help.png" />
+    <Content Include="Content\images\hand_drawn\hint.png" />
+    <Content Include="Content\images\hand_drawn\home.png" />
+    <Content Include="Content\images\hand_drawn\info.png" />
+    <Content Include="Content\images\hand_drawn\left.png" />
+    <Content Include="Content\images\hand_drawn\locked.png" />
+    <Content Include="Content\images\hand_drawn\mail.png" />
+    <Content Include="Content\images\hand_drawn\movie.png" />
+    <Content Include="Content\images\hand_drawn\notepad.png" />
+    <Content Include="Content\images\hand_drawn\photo-camera.png" />
+    <Content Include="Content\images\hand_drawn\picture.png" />
+    <Content Include="Content\images\hand_drawn\refresh.png" />
+    <Content Include="Content\images\hand_drawn\remove.png" />
+    <Content Include="Content\images\hand_drawn\right.png" />
+    <Content Include="Content\images\hand_drawn\rss.png" />
+    <Content Include="Content\images\hand_drawn\search.png" />
+    <Content Include="Content\images\hand_drawn\star.png" />
+    <Content Include="Content\images\hand_drawn\statistic.png" />
+    <Content Include="Content\images\hand_drawn\tag.png" />
+    <Content Include="Content\images\hand_drawn\tick.png" />
+    <Content Include="Content\images\hand_drawn\timer.png" />
+    <Content Include="Content\images\hand_drawn\user-admin.png" />
+    <Content Include="Content\images\hand_drawn\user-boss.png" />
+    <Content Include="Content\images\hand_drawn\user-man.png" />
+    <Content Include="Content\images\hand_drawn\user-woman.png" />
+    <Content Include="Content\images\hand_drawn\users.png" />
+    <Content Include="Content\images\hand_drawn\wifi-off.png" />
+    <Content Include="Content\images\hand_drawn\wifi-on.png" />
+    <Content Include="Content\images\retina-display\Alarm-Check-UI.PNG" />
+    <Content Include="Content\images\retina-display\Alarm-Off-UI.PNG" />
+    <Content Include="Content\images\retina-display\Alarm-On-UI.PNG" />
+    <Content Include="Content\images\retina-display\Alarm-UI.PNG" />
+    <Content Include="Content\images\retina-display\App-Globe-UI.PNG" />
+    <Content Include="Content\images\retina-display\App-Lock-UI.PNG" />
+    <Content Include="Content\images\retina-display\App-Remove-UI.PNG" />
+    <Content Include="Content\images\retina-display\App-UI.PNG" />
+    <Content Include="Content\images\retina-display\Arrow-Circle-Left-UI.PNG" />
+    <Content Include="Content\images\retina-display\Arrow-Circle-Right-UI.PNG" />
+    <Content Include="Content\images\retina-display\Arrow-Down-UI.PNG" />
+    <Content Include="Content\images\retina-display\Arrow-Left-UI.PNG" />
+    <Content Include="Content\images\retina-display\Arrow-Right-UI.PNG" />
+    <Content Include="Content\images\retina-display\Arrow-UI.PNG" />
+    <Content Include="Content\images\retina-display\Arrow-Up-UI.PNG" />
+    <Content Include="Content\images\retina-display\Attach-UI.PNG" />
+    <Content Include="Content\images\retina-display\Auction-UI.PNG" />
+    <Content Include="Content\images\retina-display\Book-Bookmark-UI.PNG" />
+    <Content Include="Content\images\retina-display\Book-UI.PNG" />
+    <Content Include="Content\images\retina-display\Bookmark-Add-UI.PNG" />
+    <Content Include="Content\images\retina-display\Bookmark-UI.PNG" />
+    <Content Include="Content\images\retina-display\Brightness-UI.PNG" />
+    <Content Include="Content\images\retina-display\Brush-UI.PNG" />
+    <Content Include="Content\images\retina-display\Bulb-Off-UI.PNG" />
+    <Content Include="Content\images\retina-display\Bulb-On-UI.PNG" />
+    <Content Include="Content\images\retina-display\Calculator-UI.PNG" />
+    <Content Include="Content\images\retina-display\Calendar-UI.PNG" />
+    <Content Include="Content\images\retina-display\Cancel-UI.PNG" />
+    <Content Include="Content\images\retina-display\Cart-UI.PNG" />
+    <Content Include="Content\images\retina-display\Case-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Area-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Bar-Down-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Bar-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Bar-Up-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Bar1-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Down-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Line-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Pie-UI.PNG" />
+    <Content Include="Content\images\retina-display\Chart-Up-UI.PNG" />
+    <Content Include="Content\images\retina-display\Checkmark-UI.PNG" />
+    <Content Include="Content\images\retina-display\Clock-UI.PNG" />
+    <Content Include="Content\images\retina-display\Comment-Check-UI.PNG" />
+    <Content Include="Content\images\retina-display\Comment-Delete-UI.PNG" />
+    <Content Include="Content\images\retina-display\Comment-Minus-UI.PNG" />
+    <Content Include="Content\images\retina-display\Comment-Plus-UI.PNG" />
+    <Content Include="Content\images\retina-display\Comment-UI.PNG" />
+    <Content Include="Content\images\retina-display\Concole-UI.PNG" />
+    <Content Include="Content\images\retina-display\Contrast-UI.PNG" />
+    <Content Include="Content\images\retina-display\Copy-UI.PNG" />
+    <Content Include="Content\images\retina-display\Credit-Card-UI.PNG" />
+    <Content Include="Content\images\retina-display\Cut-UI.PNG" />
+    <Content Include="Content\images\retina-display\Delete-UI.PNG" />
+    <Content Include="Content\images\retina-display\Disk-UI.PNG" />
+    <Content Include="Content\images\retina-display\Display-Off-UI.PNG" />
+    <Content Include="Content\images\retina-display\Display-On-UI.PNG" />
+    <Content Include="Content\images\retina-display\Document-Empty-UI.PNG" />
+    <Content Include="Content\images\retina-display\Document-UI.PNG" />
+    <Content Include="Content\images\retina-display\Favorites-Add-UI.PNG" />
+    <Content Include="Content\images\retina-display\Favorites-Remove-UI.PNG" />
+    <Content Include="Content\images\retina-display\Film-UI.PNG" />
+    <Content Include="Content\images\retina-display\Flag-Sign.PNG" />
+    <Content Include="Content\images\retina-display\Flag-UI.PNG" />
+    <Content Include="Content\images\retina-display\Flash-UI.PNG" />
+    <Content Include="Content\images\retina-display\Folder-Bookmark-UI.PNG" />
+    <Content Include="Content\images\retina-display\Folder-In-UI.PNG" />
+    <Content Include="Content\images\retina-display\Folder-UI.PNG" />
+    <Content Include="Content\images\retina-display\Font-Case-UI.PNG" />
+    <Content Include="Content\images\retina-display\Font-Down-UI.PNG" />
+    <Content Include="Content\images\retina-display\Font-Italic-UI.PNG" />
+    <Content Include="Content\images\retina-display\Font-P-UI.PNG" />
+    <Content Include="Content\images\retina-display\Font-UI.PNG" />
+    <Content Include="Content\images\retina-display\Font-Underline-UI.PNG" />
+    <Content Include="Content\images\retina-display\Font-Up-UI.PNG" />
+    <Content Include="Content\images\retina-display\Frame-UI.PNG" />
+    <Content Include="Content\images\retina-display\Gear-UI.PNG" />
+    <Content Include="Content\images\retina-display\Globe-UI.PNG" />
+    <Content Include="Content\images\retina-display\Hat-UI.PNG" />
+    <Content Include="Content\images\retina-display\Heart-UI.PNG" />
+    <Content Include="Content\images\retina-display\Help-UI.PNG" />
+    <Content Include="Content\images\retina-display\Home-UI.PNG" />
+    <Content Include="Content\images\retina-display\Inbox-UI.PNG" />
+    <Content Include="Content\images\retina-display\Info-UI.PNG" />
+    <Content Include="Content\images\retina-display\Key-UI.PNG" />
+    <Content Include="Content\images\retina-display\Keyboard-UI.PNG" />
+    <Content Include="Content\images\retina-display\Laptop-UI.PNG" />
+    <Content Include="Content\images\retina-display\Link-UI.PNG" />
+    <Content Include="Content\images\retina-display\Lock-UI.PNG" />
+    <Content Include="Content\images\retina-display\Magnifier-UI.PNG" />
+    <Content Include="Content\images\retina-display\Mail-UI.PNG" />
+    <Content Include="Content\images\retina-display\Man-UI.PNG" />
+    <Content Include="Content\images\retina-display\Med-UI.PNG" />
+    <Content Include="Content\images\retina-display\Mic-UI.PNG" />
+    <Content Include="Content\images\retina-display\Minus-UI.PNG" />
+    <Content Include="Content\images\retina-display\Money-UI.PNG" />
+    <Content Include="Content\images\retina-display\Moving-UI.PNG" />
+    <Content Include="Content\images\retina-display\Note-UI.PNG" />
+    <Content Include="Content\images\retina-display\On-Off-UI.PNG" />
+    <Content Include="Content\images\retina-display\Outbox-UI.PNG" />
+    <Content Include="Content\images\retina-display\Paint-UI.PNG" />
+    <Content Include="Content\images\retina-display\Paper-Plane-UI.PNG" />
+    <Content Include="Content\images\retina-display\Pencil-UI.PNG" />
+    <Content Include="Content\images\retina-display\Phone-UI.PNG" />
+    <Content Include="Content\images\retina-display\Photo-UI.PNG" />
+    <Content Include="Content\images\retina-display\Plus-UI.PNG" />
+    <Content Include="Content\images\retina-display\Reload-UI.PNG" />
+    <Content Include="Content\images\retina-display\Resize-UI.PNG" />
+    <Content Include="Content\images\retina-display\Rss-UI.PNG" />
+    <Content Include="Content\images\retina-display\Ruler-UI.PNG" />
+    <Content Include="Content\images\retina-display\Safe-UI.PNG" />
+    <Content Include="Content\images\retina-display\Save-UI.PNG" />
+    <Content Include="Content\images\retina-display\Shopping-Bag-UI.PNG" />
+    <Content Include="Content\images\retina-display\Smile-Sad-UI.PNG" />
+    <Content Include="Content\images\retina-display\Smile-UI.PNG" />
+    <Content Include="Content\images\retina-display\Sound-UI.PNG" />
+    <Content Include="Content\images\retina-display\Spanner-UI.PNG" />
+    <Content Include="Content\images\retina-display\Speaker-UI.PNG" />
+    <Content Include="Content\images\retina-display\Star-UI.PNG" />
+    <Content Include="Content\images\retina-display\Stop-UI.PNG" />
+    <Content Include="Content\images\retina-display\Storage-UI.PNG" />
+    <Content Include="Content\images\retina-display\Sum-UI.PNG" />
+    <Content Include="Content\images\retina-display\Tag-Add-UI.PNG" />
+    <Content Include="Content\images\retina-display\Tag-Cancel-UI.PNG" />
+    <Content Include="Content\images\retina-display\Tag-Remove-UI.PNG" />
+    <Content Include="Content\images\retina-display\Tag-UI.PNG" />
+    <Content Include="Content\images\retina-display\Trash-Mac-UI.PNG" />
+    <Content Include="Content\images\retina-display\Trash-UI.PNG" />
+    <Content Include="Content\images\retina-display\Tray-Full-UI.PNG" />
+    <Content Include="Content\images\retina-display\Tray-Mail-UI.PNG" />
+    <Content Include="Content\images\retina-display\Tray-UI.PNG" />
+    <Content Include="Content\images\retina-display\Twg-Logo-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-Forward-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-Next-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-Pause-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-Play-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-Previous-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-Rec-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-Rewind-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-Stop-UI.PNG" />
+    <Content Include="Content\images\retina-display\Video-UI.PNG" />
+    <Content Include="Content\images\retina-display\Volume-Down-UI.PNG" />
+    <Content Include="Content\images\retina-display\Volume-Up-UI.PNG" />
+    <Content Include="Content\images\retina-display\Wallet-UI.PNG" />
+    <Content Include="Content\images\retina-display\Warning-Sign.PNG" />
+    <Content Include="Content\images\retina-display\Warning-UI.PNG" />
+    <Content Include="Content\images\retina-display\Wifi-UI.PNG" />
+    <Content Include="Content\images\retina-display\Zoom-In-UI.PNG" />
+    <Content Include="Content\images\retina-display\Zoom-Out-UI.PNG" />
+    <Content Include="Content\images\splash.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -171,11 +373,13 @@
     <Content Include="Content\themes\bootstrap\jquery.ui.1.8.16.ie.css" />
     <Content Include="Global.asax" />
     <Content Include="README.jQuery.vsdoc.txt" />
+    <Content Include="Scripts\date.format.js" />
     <Content Include="Scripts\jquery-1.7.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.2.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.19.js" />
     <Content Include="Scripts\jquery-ui-1.8.19.min.js" />
+    <Content Include="Scripts\jquery.parseJSON-extension.js" />
     <Content Include="Scripts\jQuery.tmpl.js" />
     <Content Include="Scripts\jQuery.tmpl.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
@@ -183,7 +387,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -235,6 +441,18 @@
   <ItemGroup>
     <Content Include="Views\Event\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery.outerHTML-extension.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Club\Index.cshtml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -255,6 +473,8 @@
           <DevelopmentServerPort>64300</DevelopmentServerPort>
           <DevelopmentServerVPath>/view/</DevelopmentServerVPath>
           <IISUrl>http://localhost:8080/view</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://yeep:8080/view</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

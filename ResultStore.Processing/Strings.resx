@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ResultStore_Processing_Import_AutoDownloadWeb_Description" xml:space="preserve">
+  <data name="Import_AutoDownloadWeb_Description" xml:space="preserve">
     <value>Imports an event from the web in AutoDownload standard format</value>
   </data>
-  <data name="ResultStore_Processing_Import_AutoDownloadWeb_Name" xml:space="preserve">
+  <data name="Import_AutoDownloadWeb_Name" xml:space="preserve">
     <value>AutoDownload (Web)</value>
   </data>
-  <data name="ResultStore_Processing_Import_WebAddressNotSet" xml:space="preserve">
+  <data name="Import_WebAddressNotSet" xml:space="preserve">
     <value>Can not import from the web without a valid web address</value>
+  </data>
+  <data name="Import_WinSplitsWeb_Description" xml:space="preserve">
+    <value>Imports an event from the WinSplits Online website</value>
+  </data>
+  <data name="Import_WinSplitsWeb_Name" xml:space="preserve">
+    <value>WinSplits Online</value>
   </data>
 </root>

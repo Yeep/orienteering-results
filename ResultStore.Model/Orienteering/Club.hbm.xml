@@ -10,6 +10,7 @@
     <property name="Name"/>
     <property name="ShortName"/>
     <property name="Url"/>
+    <property name="AssociationName"/>
     <many-to-one class="Association" name="Association" lazy="false"/>
   </class>
 </hibernate-mapping>

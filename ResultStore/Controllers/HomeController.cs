@@ -10,5 +10,11 @@ namespace ResultStore.Controllers
         {
             return View();
         }
+
+        [GET("regenerate")]
+        public ActionResult Regenerate() {
+            DebugData.Generate();
+            return new EmptyResult();
+        }
     }
 }

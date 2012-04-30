@@ -51,6 +51,7 @@
     <Compile Include="Orienteering\Club.cs" />
     <Compile Include="Orienteering\Course.cs" />
     <Compile Include="Orienteering\Event.cs" />
+    <Compile Include="Orienteering\Federation.cs" />
     <Compile Include="Orienteering\Person.cs" />
     <Compile Include="Orienteering\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Authentication\Role.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Orienteering\Federation.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

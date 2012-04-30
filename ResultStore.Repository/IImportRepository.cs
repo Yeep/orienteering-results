@@ -4,10 +4,8 @@ namespace ResultStore.Repository
 {
     public interface IImportRepository
     {
-        void AddEvent(ref Event e);
-        void AddCourse(ref Course c);
-        void AddResult(ref Result r);
-
-        Club TryGetClubFromName(string name);
+        void Event(ref Event e);
+        void Course(ref Course c);
+        void Result(ref Result r);
     }
 }

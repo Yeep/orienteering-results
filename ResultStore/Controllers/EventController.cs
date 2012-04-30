@@ -9,7 +9,7 @@ using ResultStore.Repository;
 
 namespace ResultStore.Controllers
 {
-    public class EventController : Controller
+    public class EventController : ContextAwareController
     {
         private static IEventRepository s_repository;
         private static ICourseRepository s_course_repository;
@@ -17,7 +17,6 @@ namespace ResultStore.Controllers
         static EventController() {
             s_repository = new EventRepository();
             s_course_repository = new CourseRepository();
-            //DebugData data = new DebugData();
         }
 
         //---------------------------------------------------------------------------------------------------
@@ -26,7 +25,7 @@ namespace ResultStore.Controllers
         [Authorize]
         public ActionResult Event(int id) {
             var e = s_repository.GetById(id);
-            return ReturnObject(e);
+            return ContextAwareReturn(e);
         }
 
         //---------------------------------------------------------------------------------------------------
@@ -34,7 +33,7 @@ namespace ResultStore.Controllers
         [GET("events")]
         [Authorize(Roles="ADMINISTRATOR")]
         public ActionResult List() {
-            return ReturnObject(s_repository.List());
+            return ContextAwareReturn(s_repository.List());
         }
 
         //---------------------------------------------------------------------------------------------------
@@ -42,7 +41,7 @@ namespace ResultStore.Controllers
         [GET("events/recent/{number}")]
         [Authorize]
         public ActionResult RecentEvents(int number) {
-            return ReturnObject(s_repository.Recent(number));
+            return ContextAwareReturn(s_repository.Recent(number));
         }
 
         //---------------------------------------------------------------------------------------------------
@@ -68,7 +67,7 @@ namespace ResultStore.Controllers
         [GET("event/{id}/courses")]
         [Authorize]
         public ActionResult Courses(int id) {
-            return ReturnObject(s_course_repository.ForEvent(new Event { Id = id }));
+            return ContextAwareReturn(s_course_repository.ForEvent(new Event { Id = id }));
         }
 
         //---------------------------------------------------------------------------------------------------
@@ -76,7 +75,7 @@ namespace ResultStore.Controllers
         [GET("event/{id}/course/{course}")]
         [Authorize]
         public ActionResult Course(int id, int course) {
-            return ReturnObject(s_course_repository.GetById(course));
+            return ContextAwareReturn(s_course_repository.GetById(course));
 
         }
 
@@ -85,21 +84,7 @@ namespace ResultStore.Controllers
         [GET("event/{id}/course/{course}/results")]
         [Authorize]
         public ActionResult ResultsByCourse(int id, int course) {
-            return ReturnObject(s_course_repository.Results(s_course_repository.GetById(course)));
-        }
-
-        //---------------------------------------------------------------------------------------------------
-
-        private ActionResult ReturnObject(object obj) {
-            if (Request.AcceptTypes.Contains("application/json")) {
-                return Json(obj, JsonRequestBehavior.AllowGet);
-            } else if (Request.AcceptTypes.Contains("application/xml") ||
-                       Request.AcceptTypes.Contains("text/xml") || 
-                       Request.AcceptTypes.Contains("application/xml;q=0.9")) {
-                return new XmlResult(obj);
-            }
-
-            throw new Exception("Something went wrong");
+            return ContextAwareReturn(s_course_repository.Results(s_course_repository.GetById(course)));
         }
     }
 }

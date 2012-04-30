@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResultViewer", "ResultViewe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResultStore.Authentication", "ResultStore.Authentication\ResultStore.Authentication.csproj", "{D188F6D5-B451-4C9B-88AB-0F9E449DC7A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResultStore.DataTest", "ResusltStore.DataTest\ResultStore.DataTest.csproj", "{BB81AF38-7C5F-48D0-8845-DCF98918659D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{D188F6D5-B451-4C9B-88AB-0F9E449DC7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D188F6D5-B451-4C9B-88AB-0F9E449DC7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D188F6D5-B451-4C9B-88AB-0F9E449DC7A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB81AF38-7C5F-48D0-8845-DCF98918659D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB81AF38-7C5F-48D0-8845-DCF98918659D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB81AF38-7C5F-48D0-8845-DCF98918659D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB81AF38-7C5F-48D0-8845-DCF98918659D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,13 +8,17 @@ namespace ResultStore
 {
     public class DebugData
     {
-        static DebugData() {
+        public static void Generate() {
             // This sets up the database. NOT FOR PRODUCTION!
             SessionProvider.Instance.RebuildSchema();
 
-            var import_repo = new ImportRepository();
-            var autodownload = new AutoDownloadWeb(@"http://www.esoc.org.uk/results-files/2011/1023-barrybuddon/index.html");
-            autodownload.Import(import_repo);
+            //var import_repo = new ImportRepository();
+            //var autodownload1 = new AutoDownloadWeb(@"http://www.esoc.org.uk/results-files/2011/1023-barrybuddon/");
+            //autodownload1.Import(import_repo);
+            //var autodownload2 = new AutoDownloadWeb(@"http://www.esoc.org.uk/results-files/2011/0115-mary-erskine/");
+            //autodownload2.Import(import_repo);
+            //var autodownload3 = new AutoDownloadWeb(@"http://www.esoc.org.uk/results-files/2011/0212-hopetoun/");
+            //autodownload3.Import(import_repo);
 
             var club_repo = new ClubRepository();
             var event_repo = new EventRepository();
@@ -22,17 +26,22 @@ namespace ResultStore
             club_repo.Save(new Club { 
                 Name = "West Anglian Orienteering Club", 
                 ShortName = "WAOC", 
-                Url = "www.waoc.org.uk" 
+                Url = "http://www.waoc.org.uk" 
             });
             club_repo.Save(new Club { 
                 Name = "Edinburgh University Orienteering Club", 
-                ShortName = "EUOC", 
-                Url = "orienteering.eusu.ed.ac.uk" 
+                ShortName = "EUOC",
+                Url = "http://orienteering.eusu.ed.ac.uk" 
             });
             club_repo.Save(new Club { 
                 Name = "Auld Reekie Orienteering Society", 
-                ShortName = "AROS", 
-                Url = "www.aroslegends.com" 
+                ShortName = "AROS",
+                Url = "http://www.aroslegends.com"
+            });
+            club_repo.Save(new Club {
+                Name = "Edinburgh Southern Orienteering Club",
+                ShortName = "ESOC",
+                Url = "http://www.esoc.org.uk"
             });
         }
     }

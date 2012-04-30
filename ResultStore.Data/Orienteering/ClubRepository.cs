@@ -44,5 +44,31 @@ namespace ResultStore.Data.Orienteering
                 .SetParameter("id", id)
                 .List<Event>();
         }
+
+        //---------------------------------------------------------------------------------------------------
+
+        public IList<Event> RecentEvents(int id, int number) {
+            Club c = new Club { Id = id };
+            return SessionProvider.Instance.GetSession().CreateQuery("FROM Event e WHERE e.Club = :club ORDER BY e.Date DESC")
+                .SetEntity("club", c)
+                .SetMaxResults(number)
+                .List<Event>();
+        }
+
+        //---------------------------------------------------------------------------------------------------
+
+        public Club GetByShortName(string shortname) {
+            return SessionProvider.Instance.GetSession().CreateQuery("FROM Club c WHERE c.ShortName = :shortname")
+                .SetString("shortname", shortname)
+                .UniqueResult<Club>();
+        }
+
+        //---------------------------------------------------------------------------------------------------
+
+        public Club GetByName(string name) {
+            return SessionProvider.Instance.GetSession().CreateQuery("FROM Club c WHERE c.Name = :name")
+                .SetString("name", name)
+                .UniqueResult<Club>();
+        }
     }
 }

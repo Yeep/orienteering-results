@@ -63,27 +63,45 @@ namespace ResultStore.Processing {
         /// <summary>
         ///   Looks up a localized string similar to Imports an event from the web in AutoDownload standard format.
         /// </summary>
-        internal static string ResultStore_Processing_Import_AutoDownloadWeb_Description {
+        internal static string Import_AutoDownloadWeb_Description {
             get {
-                return ResourceManager.GetString("ResultStore_Processing_Import_AutoDownloadWeb_Description", resourceCulture);
+                return ResourceManager.GetString("Import_AutoDownloadWeb_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to AutoDownload (Web).
         /// </summary>
-        internal static string ResultStore_Processing_Import_AutoDownloadWeb_Name {
+        internal static string Import_AutoDownloadWeb_Name {
             get {
-                return ResourceManager.GetString("ResultStore_Processing_Import_AutoDownloadWeb_Name", resourceCulture);
+                return ResourceManager.GetString("Import_AutoDownloadWeb_Name", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Can not import from the web without a valid web address.
         /// </summary>
-        internal static string ResultStore_Processing_Import_WebAddressNotSet {
+        internal static string Import_WebAddressNotSet {
             get {
-                return ResourceManager.GetString("ResultStore_Processing_Import_WebAddressNotSet", resourceCulture);
+                return ResourceManager.GetString("Import_WebAddressNotSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imports an event from the WinSplits Online website.
+        /// </summary>
+        internal static string Import_WinSplitsWeb_Description {
+            get {
+                return ResourceManager.GetString("Import_WinSplitsWeb_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WinSplits Online.
+        /// </summary>
+        internal static string Import_WinSplitsWeb_Name {
+            get {
+                return ResourceManager.GetString("Import_WinSplitsWeb_Name", resourceCulture);
             }
         }
     }

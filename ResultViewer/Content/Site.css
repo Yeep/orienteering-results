@@ -112,3 +112,103 @@ nav #menu {
     width: 100px;
     text-align: right;
 }
+
+.course-details {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.course-details-length, .course-details-climb, .course-details-results {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    top: -10px;
+}
+
+.course-details-length img, .course-details-climb img, .course-details-results img {
+    position: relative;
+    top: 10px;
+    padding: 5px;
+}
+
+.event, .club {
+    text-align: center;
+    font-size: .9em;
+    padding-bottom: 10px;
+}
+
+.event.small {
+    text-align: left;
+}
+
+.event-name {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.event.small .event-name {
+    display: inline;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.event-date, .event-link, .event-club {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    top: -10px;
+}
+
+.event.small .event-date, .event.small .event-link, .event.small .event-club {
+    position: relative;
+    text-align: left;
+    padding: 0px;
+    top: 0px;
+}
+
+.event-date img, .event-link img, .event-club img {
+    position: relative;
+    top: 15px;
+    padding: 5px;
+}
+
+.event.small .event-date img, .event.small .event-link img, .event.small .event-club img {
+    position: relative;
+    top: 5px;
+    padding: 0px;
+}
+
+.event.small .event-date {
+    font-weight: bold;
+    padding-right: 5px;
+    margin-right: 5px;
+    border-right: 1px solid #000000;
+}
+
+.event-description {
+    display: block;
+    text-align: left;
+}
+
+.event-description img {
+    float: left;
+    position: relative;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.club-name-short {
+    display: block;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.club-name-full {
+    display: block;
+    font-size: .8em;
+    font-weight: bold;
+    color: #6D6D6D;
+}

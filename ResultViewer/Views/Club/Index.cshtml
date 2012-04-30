@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Club";
+}
+
+<script type="jquery/x-jquery-tmpl" id="clubTemplate">
+    <div class="club">
+        <div class="club-name">
+            <span class="club-name-short">${ShortName}</span>
+            <span class="club-name-full">(${Name})</span>
+        </div>
+    </div>
+</script>
+
+<script type="jquery/x-jquery-tmpl" id="eventTemplate">
+    <div class="event small">
+        <span class="event-date">{{if Date}}${Date.format("dd/mm/yyyy")}{{else}}@ResultViewer.Strings.Unknown{{/if}}</span>
+        <div class="event-name"><a href="/view/event/${Id}">${Name}</a></div>
+    </div>
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        tabs = $("#tabs").tabs({
+            ajaxOptions: {
+                dataType: 'json',
+                dataFilter: function (result) {
+                    var data = $.parseJSON(result);
+                    var string = '';
+
+                    for (thing in data) {
+                        string += $("#eventTemplate").tmpl(data[thing]).outerHTML();
+                    }
+
+                    this.dataTypes = ['html']
+                    return string;
+                }
+            }
+        });
+
+        $.getJSON(
+            "/store/club/@ViewBag.ClubIndex",
+            null,
+            function (data) {
+                $("#clubTemplate").tmpl(data).appendTo("#clubContainer");
+            }
+        );
+    });
+</script>
+
+<div id="clubContainer"></div>
+
+<div id="tabs">
+    <ul>
+        <li><a href="/store/club/@ViewBag.ClubIndex/events/recent/10"><span>Events</span></a></li>
+        <li><a href="/store/club/@ViewBag.ClubIndex/people"><span>People</span></a></li>
+    </ul>
+</div>

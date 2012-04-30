@@ -6,7 +6,7 @@ using ResultStore.Repository;
 
 namespace ResultStore.Controllers
 {
-    public class ClubController : Controller
+    public class ClubController : ContextAwareController
     {
         private static IClubRepository s_repository;
 
@@ -18,20 +18,23 @@ namespace ResultStore.Controllers
         //---------------------------------------------------------------------------------------------------
 
         [GET("club/{id}")]
+        [Authorize]
         public ActionResult Club(int id) {
-            return Json(s_repository.GetById(id), JsonRequestBehavior.AllowGet);
+            return ContextAwareReturn(s_repository.GetById(id));
         }
 
         //---------------------------------------------------------------------------------------------------
 
         [GET("clubs")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         public ActionResult List() {
-            return Json(s_repository.List(), JsonRequestBehavior.AllowGet);
+            return ContextAwareReturn(s_repository.List());
         }
 
         //---------------------------------------------------------------------------------------------------
 
         [POST("club")]
+        [Authorize(Roles = "ADMINISTRATOR")]
         public ActionResult Create(Club club) {
             s_repository.Save(club);
             return new EmptyResult();
@@ -40,6 +43,7 @@ namespace ResultStore.Controllers
         //---------------------------------------------------------------------------------------------------
 
         [DELETE("club/{id}")]
+        [Authorize(Roles="ADMINISTRATOR")]
         public ActionResult Delete(int id) {
             s_repository.Delete(id);
             return new EmptyResult();
@@ -48,8 +52,17 @@ namespace ResultStore.Controllers
         //---------------------------------------------------------------------------------------------------
 
         [GET("club/{id}/events")]
+        [Authorize(Roles="ADMINISTRATOR")]
         public ActionResult Events(int id) {
-            return Json(s_repository.Events(id), JsonRequestBehavior.AllowGet);
+            return ContextAwareReturn(s_repository.Events(id));
+        }
+
+        //---------------------------------------------------------------------------------------------------
+
+        [GET("club/{id}/events/recent/{number}")]
+        [Authorize]
+        public ActionResult RecentEvents(int id, int number) {
+            return ContextAwareReturn(s_repository.RecentEvents(id, number));
         }
     }
 }
