@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
+using ResultStore.Model.Orienteering;
 
 namespace ResultStore.Model.Authentication
 {
@@ -28,6 +29,8 @@ namespace ResultStore.Model.Authentication
         public virtual string Email { get; set; }
         public virtual ICollection<Role> Roles { get; set; }
         public virtual ICollection<Right> Rights { get; set; }
+
+        public virtual Person Person { get; set; }
 
         //---------------------------------------------------------------------------------------------------
 

@@ -50,10 +50,14 @@
     <Compile Include="Orienteering\Association.cs" />
     <Compile Include="Orienteering\Club.cs" />
     <Compile Include="Orienteering\Course.cs" />
+    <Compile Include="Orienteering\ECard.cs" />
+    <Compile Include="Orienteering\EmitCard.cs" />
     <Compile Include="Orienteering\Event.cs" />
     <Compile Include="Orienteering\Federation.cs" />
+    <Compile Include="Orienteering\FederationId.cs" />
     <Compile Include="Orienteering\Person.cs" />
     <Compile Include="Orienteering\Result.cs" />
+    <Compile Include="Orienteering\SiCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +95,14 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Orienteering\Federation.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Orienteering\FederationId.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Orienteering\ECard.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

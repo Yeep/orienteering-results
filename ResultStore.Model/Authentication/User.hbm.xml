@@ -9,6 +9,7 @@
     </id>
     <property name="Name"/>
     <property name="Password"/>
+    <one-to-one name="Person" class="ResultStore.Model.Orienteering.Person" />
     <set name="Roles"
          table="Authentication.UserRoles"
          cascade="all">

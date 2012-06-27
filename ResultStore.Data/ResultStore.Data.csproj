@@ -59,6 +59,7 @@
     <Compile Include="Orienteering\ClubRepository.cs" />
     <Compile Include="Orienteering\CourseRepository.cs" />
     <Compile Include="Orienteering\EventRepository.cs" />
+    <Compile Include="Orienteering\SocialRepository.cs" />
     <Compile Include="SessionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

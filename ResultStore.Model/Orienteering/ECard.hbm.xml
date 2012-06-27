@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ResultStore.Model"
+                   namespace="ResultStore.Model.Orienteering">
+  <class name="ECard"
+         abstract="true"
+         table="Orienteering.ECards">
+    <id name="Id">
+      <generator class="hilo"/>
+    </id>
+    <property name="Code"/>
+
+    <union-subclass table="Orienteering.SiCards"
+                    name="SiCard">
+    </union-subclass>
+
+    <union-subclass table="Orienteering.EmitCards"
+                    name="EmitCard">
+    </union-subclass>
+  </class>
+</hibernate-mapping>

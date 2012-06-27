@@ -47,6 +47,7 @@
     <Compile Include="IImportRepository.cs" />
     <Compile Include="IQueuedEventRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="ISocialRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
